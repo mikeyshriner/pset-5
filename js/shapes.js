@@ -25,6 +25,8 @@ window.onload = function() {
  * Exercise 1.
  */
 
+
+
 const sayHello = function() {
     // write your exercise 1 code here
 };
@@ -34,7 +36,11 @@ const sayHello = function() {
  */
 
 const drawRectangle = function() {
+<<<<<<< Updated upstream
     // write your exercise 2 code here
+=======
+
+>>>>>>> Stashed changes
 };
 
 /*
@@ -42,7 +48,11 @@ const drawRectangle = function() {
  */
 
 const drawColoredRectangle = function() {
+<<<<<<< Updated upstream
     // write your exercise 3 code here
+=======
+
+>>>>>>> Stashed changes
 };
 
 /*
@@ -50,7 +60,11 @@ const drawColoredRectangle = function() {
  */
 
 const drawTriangle = function() {
+<<<<<<< Updated upstream
     // write your exercise 4 code here
+=======
+
+>>>>>>> Stashed changes
 };
 
 /*
@@ -58,7 +72,11 @@ const drawTriangle = function() {
  */
 
 const drawFace = function() {
+<<<<<<< Updated upstream
     // write your exercise 4 code here
+=======
+
+>>>>>>> Stashed changes
 };
 
 /*
@@ -66,5 +84,10 @@ const drawFace = function() {
  */
 
 const drawPyramid = function() {
+<<<<<<< Updated upstream
     // write your exercise 5 code here
 };
+=======
+
+};
+>>>>>>> Stashed changes
