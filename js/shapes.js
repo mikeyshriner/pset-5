@@ -18,7 +18,7 @@ window.onload = function() {
     // there are six event listeners being added for the staff solutions. you'll have an
     // equivalent set of six event listeners for your solutions. the first one is done for you.
     document.getElementById("hello").onclick = sayHello;
-    // document.getElementById("rectangle").onclick = drawRectangle;
+    document.getElementById("rectangle").onclick = drawRectangle;
     // document.getElementById("colored-rectangle").onclick = drawColoredRectangle;
     // document.getElementById("triangle").onclick = drawTriangle;
     // document.getElementById("smile").onclick = drawFace;
@@ -41,7 +41,7 @@ const sayHello = function() {
   }
 
   while(text.length > 50) {
-    alert("Your message is too long, fatty. Keep it under 50 characters.")
+    alert("Your message is too long. Keep it under 50 characters.")
     text = promt("Message:")
   }
 
@@ -56,7 +56,33 @@ const sayHello = function() {
  */
 
 const drawRectangle = function() {
-    // write your exercise 2 code here
+
+  let canvas = document.getElementById("student-canvas-2");
+  let ctx = canvas.getContext("2d");
+
+  let width = prompt("Width:")
+  let height = prompt("Height:")
+  let x = prompt("X:")
+  let y = prompt("Y:")
+    ctx.clearRect(0 , 0 , canvas.width , canvas.Length)
+
+  ctx.strokeRect(x , y , width , height)
+
+  if (width === null) {
+    ctx.clearRect(0, 0, canvas.width , canvas.height);
+  }
+  if (height === null) {
+    ctx.clearRect(0, 0, canvas.width , canvas.height);
+  }
+  if (x === null) {
+    ctx.clearRect(0, 0, canvas.width , canvas.height);
+  }
+  if (y === null) {
+    ctx.clearRect(0, 0, canvas.width , canvas.height);
+  }
+
+
+
 };
 
 /*
