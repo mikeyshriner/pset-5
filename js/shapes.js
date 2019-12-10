@@ -17,18 +17,38 @@ window.onload = function() {
     //
     // there are six event listeners being added for the staff solutions. you'll have an
     // equivalent set of six event listeners for your solutions. the first one is done for you.
-
     document.getElementById("hello").onclick = sayHello;
+    // document.getElementById("rectangle").onclick = drawRectangle;
+    // document.getElementById("colored-rectangle").onclick = drawColoredRectangle;
+    // document.getElementById("triangle").onclick = drawTriangle;
+    // document.getElementById("smile").onclick = drawFace;
+    // document.getElementById("pyramid").onclick = drawPyramid;
+
 }
 
 /*
  * Exercise 1.
  */
 
-
-
 const sayHello = function() {
-    // write your exercise 1 code here
+  const canvas = document.getElementById("student-canvas-1")
+  const ctx = canvas.getContext("2d")
+
+  let text = prompt("Message:");
+
+  if (text === null) {
+    ctx.clearRect(0, 0, canvas.width , canvas.height);
+  }
+
+  while(text.length > 50) {
+    alert("Your message is too long, fatty. Keep it under 50 characters.")
+    text = promt("Message:")
+  }
+
+  ctx.font = "48px Sans-serif";
+  ctx.clearRect(0 , 0 , canvas.width , canvas.height);
+  ctx.strokeText(text, 30, 70, canvas.width - 30);
+
 };
 
 /*
@@ -36,11 +56,7 @@ const sayHello = function() {
  */
 
 const drawRectangle = function() {
-<<<<<<< Updated upstream
     // write your exercise 2 code here
-=======
-
->>>>>>> Stashed changes
 };
 
 /*
@@ -48,11 +64,11 @@ const drawRectangle = function() {
  */
 
 const drawColoredRectangle = function() {
-<<<<<<< Updated upstream
-    // write your exercise 3 code here
-=======
 
->>>>>>> Stashed changes
+    // write your exercise 3 code here
+
+
+
 };
 
 /*
@@ -60,11 +76,9 @@ const drawColoredRectangle = function() {
  */
 
 const drawTriangle = function() {
-<<<<<<< Updated upstream
-    // write your exercise 4 code here
-=======
 
->>>>>>> Stashed changes
+    // write your exercise 4 code here
+
 };
 
 /*
@@ -72,11 +86,9 @@ const drawTriangle = function() {
  */
 
 const drawFace = function() {
-<<<<<<< Updated upstream
     // write your exercise 4 code here
-=======
 
->>>>>>> Stashed changes
+
 };
 
 /*
@@ -84,10 +96,6 @@ const drawFace = function() {
  */
 
 const drawPyramid = function() {
-<<<<<<< Updated upstream
+
     // write your exercise 5 code here
 };
-=======
-
-};
->>>>>>> Stashed changes
