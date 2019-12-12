@@ -17,13 +17,13 @@ window.onload = function() {
     //
     // there are six event listeners being added for the staff solutions. you'll have an
     // equivalent set of six event listeners for your solutions. the first one is done for you.
+
     document.getElementById("hello").onclick = sayHello;
     document.getElementById("rectangle").onclick = drawRectangle;
-    // document.getElementById("colored-rectangle").onclick = drawColoredRectangle;
+    document.getElementById("colored-rectangle").onclick = drawColoredRectangle;
     // document.getElementById("triangle").onclick = drawTriangle;
     // document.getElementById("smile").onclick = drawFace;
     // document.getElementById("pyramid").onclick = drawPyramid;
-
 }
 
 /*
@@ -48,50 +48,109 @@ const sayHello = function() {
   ctx.font = "48px Sans-serif";
   ctx.clearRect(0 , 0 , canvas.width , canvas.height);
   ctx.strokeText(text, 30, 70, canvas.width - 30);
-
 };
 
 /*
  * Exercise 2.
  */
 
-const drawRectangle = function() {
+ const drawRectangle = function() {
+   const canvas = document.getElementById('student-canvas-2');
+   const ctx = canvas.getContext('2d');
+   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  let canvas = document.getElementById("student-canvas-2");
-  let ctx = canvas.getContext("2d");
+   var width = 0;
+   var height = 0;
+   var x = 0;
+   var y = 0;
+   do {
+     var width = prompt("Width: ")
+     var height = prompt("Height: ")
+     var x = prompt("X: ")
+     var y = prompt("Y: ")
+     if (width == null || height == null || x == null || y == null) {
+       break;
+     }
+     if (width > 1024 || width < 1) {
+       alert("Your width must be between 1 and 1024.")
+     }
+     else if (height > 512 || height < 1) {
+       alert("Your height must be between 1 and 512.")
+     }
+     else if (x < 1 || x > 1024) {
+       alert("Your x-coordinate must be between 1 and 1024.")
+     }
+     else if (y < 1 || y > 512) {
+       alert("Your y-coordinate must be between 1 and 512.")
+     }
+     else if (isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y)) {
+       alert("One of your values is not a number.")
+     }
+     else if (Number(width) + Number(x) > 1024 || Number(height) + Number(y) > 512) {
+       alert("Your rectangle won't fit on the canvas.")
+     }
+   } while (width > 1024 || width < 1 || height > 512 || height < 1 || x < 1 || x > 1024 || y < 1 || y > 512 || isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y) || Number(width) + Number(x) > 1024 || Number(height) + Number(y) > 512)
 
-  let width = prompt("Width:")
-  let height = prompt("Height:")
-  let x = prompt("X:")
-  let y = prompt("Y:")
-    ctx.clearRect(0 , 0 , canvas.width , canvas.Length)
-
-  ctx.strokeRect(x , y , width , height)
-
-  if (width === null) {
-    ctx.clearRect(0, 0, canvas.width , canvas.height);
-  }
-  if (height === null) {
-    ctx.clearRect(0, 0, canvas.width , canvas.height);
-  }
-  if (x === null) {
-    ctx.clearRect(0, 0, canvas.width , canvas.height);
-  }
-  if (y === null) {
-    ctx.clearRect(0, 0, canvas.width , canvas.height);
-  }
-
-
-
+   if (!(width == null) && !(height == null) && !(x == null) && !(y == null)) {
+     ctx.beginPath();
+     ctx.rect(x, y, width, height);
+     ctx.closePath();
+     ctx.stroke();
+   }
 };
 
 /*
  * Exercise 3.
  */
 
-const drawColoredRectangle = function() {
+ const drawColoredRectangle = function() {
+   const canvas = document.getElementById('student-canvas-3');
+   const ctx = canvas.getContext('2d');
 
-    // write your exercise 3 code here
+let color = prompt("Color:");
+
+if (color != null) {
+  color = color.toLowerCase();
+}
+
+  ctx.clearRect(0 , 0 , canvas.width , canvas.height);
+
+switch (color) {
+  case "black":
+    ctx.fillStyle = "black";
+    ctx.fillRect(10, 10, 100, 50);
+      break;
+    case "red":
+      ctx.fillStyle = "red";
+      ctx.fillRect(10, 10, 100, 50);
+        break;
+    case "yellow":
+      ctx.fillStyle = "yellow";
+      ctx.fillRect(10, 10, 100, 50);
+        break;
+    case "blue":
+      ctx.fillStyle = "blue";
+      ctx.fillRect(10, 10, 100, 50);
+        break;
+    case "green":
+      ctx.fillStyle = "green";
+      ctx.fillRect(10, 10, 100, 50);
+        break;
+    case "orange":
+      ctx.fillStyle = "orange";
+      ctx.fillRect(10, 10, 100, 50);
+        break;
+    case "purple":
+      ctx.fillStyle = "purple";
+      ctx.fillRect(10, 10, 100, 50);
+        break;
+    case null:
+      ctx.clearRect(0 , 0 , canvas.width , canvas.height);
+      break;
+    default:
+      alert(color + " is not a supported color.");
+      break;
+}
 
 
 
