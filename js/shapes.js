@@ -249,12 +249,3 @@ switch (color) {
    ctx.stroke();
    ctx.closePath();
 }; 
-
-/*
- * Exercise 6 (extra credit).
- */
-
-const drawPyramid = function() {
-
-    // write your exercise 5 code here
-};
