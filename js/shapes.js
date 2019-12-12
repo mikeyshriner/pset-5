@@ -248,7 +248,7 @@ switch (color) {
    ctx.arc(512 + 0.4 * radius, 256 - 0.4* radius, radius_eyes, 0, 2 * Math.PI);
    ctx.stroke();
    ctx.closePath();
-};
+}; 
 
 /*
  * Exercise 6 (extra credit).
