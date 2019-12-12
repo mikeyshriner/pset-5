@@ -21,7 +21,7 @@ window.onload = function() {
     document.getElementById("hello").onclick = sayHello;
     document.getElementById("rectangle").onclick = drawRectangle;
     document.getElementById("colored-rectangle").onclick = drawColoredRectangle;
-    // document.getElementById("triangle").onclick = drawTriangle;
+    document.getElementById("triangle").onclick = drawTriangle;
     // document.getElementById("smile").onclick = drawFace;
     // document.getElementById("pyramid").onclick = drawPyramid;
 }
@@ -160,11 +160,48 @@ switch (color) {
  * Exercise 4.
  */
 
-const drawTriangle = function() {
+ const drawTriangle = function() {
+   const canvas = document.getElementById('student-canvas-4');
+   const ctx = canvas.getContext('2d');
+   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // write your exercise 4 code here
+   do {
+     var side1 = prompt("Side 1: ")
+     var side2 = prompt("Side 2: ")
+     var side3 = prompt("Side 3: ")
 
-};
+     var height = Math.min (side1, side2, side3)
+     var hypotenuse = Math.max(side1, side2, side3)
+     var base = Math.sqrt(hypotenuse*hypotenuse - height*height)
+
+     if (base == 0 && height == 0 && hypotenuse == 0) {
+       break;
+     }
+     side1 = Number(side1)
+     side2 = Number(side2)
+     side3 = Number(side3)
+     if (base*base + height*height != hypotenuse*hypotenuse || base == 0 || height == 0 || hypotenuse == 0  || side1+side2+side3-hypotenuse-height != base) {
+       alert("That's not a valid right triangle.")
+     }
+     if (isNaN(side1) || isNaN(side2) || isNaN(side3)) {
+       alert("One of your sides is not a number.")
+     }
+     if (base > 1024 || height > 512 || hypotenuse > 1310720) {
+       alert("Your triangle won't fit on the canvas.")
+     }
+   }  while ((Math.floor(base)*Math.floor(base) + height*height != hypotenuse*hypotenuse) || isNaN(side1) || isNaN(side2) || isNaN(side3) || base > 1024 || height > 512 || hypotenuse > 1310720 || base == 0 || height == 0 || hypotenuse == 0)
+
+   if ((base*base + height*height == hypotenuse*hypotenuse) && (base < 1024 && height < 512 && hypotenuse < 1145) && (base != 0 && height != 0 && hypotenuse != 0) && (base != null && height != null && hypotenuse != null)) {
+     height = height + 25
+     base = base + 25
+     ctx.beginPath();
+     ctx.moveTo(25, 25);
+     ctx.lineTo(25, height);
+     ctx.lineTo(base, height)
+     ctx.lineTo(25, 25)
+     ctx.stroke();
+   };
+ }
 
 /*
  * Exercise 5.
